@@ -1,0 +1,10 @@
+.well.sidebar-nav
+  %ul.nav.nav-list
+    - if current_user
+      %li.nav-header= User.model_name.human
+      - if current_user.user_profile
+        = image_tag current_user.user_profile.avatar.url(:thumb)
+        %li= link_to t('.edit_user_profile'), edit_user_user_profile_url(current_user, current_user.user_profile)
+      - else
+        %li= link_to t('.new_user_profile'), new_user_user_profile_url(current_user)
+/ well

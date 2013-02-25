@@ -1,0 +1,23 @@
+= simple_form_for @job, :html => {:class => 'form-horizontal' } do |f|
+  = render 'fields', :f => f
+  = render 'job_profiles/fields', :f => f,
+    :locals => {:job_profile => @job.job_profile}
+  - if @category == 'tutor'
+    %h3= ChildProfile.model_name.human
+    = render 'child_profiles/fields', :f => f,
+      :locals => {:child_profile => @job.child_profile}
+  - if current_user.is_admin?
+    %h3= UserProfile.model_name.human
+    = f.simple_fields_for :user_profile do |g|
+      = render 'user_profiles/fields', :f => g,
+        :locals => {:user_profile => @job.user_profile}
+      - case @category
+      - when 'parttimes' then
+        %h3= CompanyProfile.model_name.human
+        = render 'company_profiles/fields', :f => g,
+          :locals => {:company_profile => @job.user_profile.company_profile}
+      - when 'campus' then
+        %h3= StudentProfile.model_name.human
+        = render 'student_profiles/fields', :f => g,
+          :locals => {:student_profile => @job.user_profile.student_profile}
+  = f.button :submit

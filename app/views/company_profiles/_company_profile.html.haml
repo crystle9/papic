@@ -1,0 +1,6 @@
+%tr
+  %td= CompanyProfile.human_attribute_name('name')
+  %td= company_profile.name
+%tr
+  %td= CompanyProfile.human_attribute_name('license')
+  %td= image_tag company_profile.license.url(:normal)

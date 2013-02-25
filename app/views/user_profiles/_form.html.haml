@@ -1,0 +1,22 @@
+= simple_form_for [current_user, @user_profile], :html => {:class => 'form-horizontal' } do |f|
+  = @user_profile.errors.full_messages
+  = f.input 'name' do
+    = f.input_field :family_name, :class => 'span1'
+    = f.input_field :first_name, :class => 'span2'
+  = f.input :sex, :item_wrapper_class => 'inline',
+    :collection => UserProfile::SEX.collect{|c| [UserProfile.human_attribute_name(c), c]}
+  = f.input :email, :as => :email
+  = f.input :avatar, :as => :file
+  = f.input :introduction
+  
+  - case @user.role
+  - when 'student' then
+    = render 'student_profiles/fields', 
+      :f => f, :locals => {:student_profile => @user_profile.student_profile}
+  - when 'company' then
+    = render 'company_profiles/fields',
+      :f => f, :locals => {:company_profile => @user_profile.company_profile}
+  - when 'parent' then
+    = render 'child_profiles/fields',
+      :f => f, :locals => {:child_profile => @user_profile.child_profile}
+  = f.button :submit

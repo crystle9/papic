@@ -1,0 +1,425 @@
+# Chinese (China) translations for Ruby on Rails
+# by tsechingho (http://github.com/tsechingho)
+# The file has been modified for the website
+# by light-xu (lightxuzju@gmail.com)
+
+zh-CN:
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b%d日"
+      long: "%Y年%b%d日"
+    day_names:
+      - 星期日
+      - 星期一
+      - 星期二
+      - 星期三
+      - 星期四
+      - 星期五
+      - 星期六
+    abbr_day_names:
+      - 日
+      - 一
+      - 二
+      - 三
+      - 四
+      - 五
+      - 六
+    month_names:
+      - ~
+      - 一月
+      - 二月
+      - 三月
+      - 四月
+      - 五月
+      - 六月
+      - 七月
+      - 八月
+      - 九月
+      - 十月
+      - 十一月
+      - 十二月
+    abbr_month_names:
+      - ~
+      - 1月
+      - 2月
+      - 3月
+      - 4月
+      - 5月
+      - 6月
+      - 7月
+      - 8月
+      - 9月
+      - 10月
+      - 11月
+      - 12月
+    order:
+      - :year
+      - :month
+      - :day
+
+  time:
+    formats:
+      default: "%Y年%b%d日 %A %H:%M:%S %Z"
+      short: "%b%d日 %H:%M"
+      long: "%Y年%b%d日 %H:%M"
+    am: "上午"
+    pm: "下午"
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "半分钟"
+      less_than_x_seconds:
+        one: "不到一秒"
+        other: "不到 %{count} 秒"
+      x_seconds:
+        one: "一秒"
+        other: "%{count} 秒"
+      less_than_x_minutes:
+        one: "不到一分钟"
+        other: "不到 %{count} 分钟"
+      x_minutes:
+        one: "一分钟"
+        other: "%{count} 分钟"
+      about_x_hours:
+        one: "大约一小时"
+        other: "大约 %{count} 小时"
+      x_days:
+        one: "一天"
+        other: "%{count} 天"
+      about_x_months:
+        one: "大约一个月"
+        other: "大约 %{count} 个月"
+      x_months:
+        one: "一个月"
+        other: "%{count} 个月"
+      about_x_years:
+        one: "大约一年"
+        other: "大约 %{count} 年"
+      over_x_years:
+        one: "一年多"
+        other: "%{count} 年多"
+      almost_x_years:
+        one:   "接近一年"
+        other: "接近 %{count} 年"
+    prompts:
+      year:   "年"
+      month:  "月"
+      day:    "日"
+      hour:   "时"
+      minute: "分"
+      second: "秒"
+
+  number:
+    format:
+      separator: "."
+      delimiter: ","
+      precision: 3
+      significant: false
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        format: "%u %n"
+        unit: "CN¥"
+        separator: "."
+        delimiter: ","
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+    percentage:
+      format:
+        delimiter: ""
+    precision:
+      format:
+        delimiter: ""
+    human:
+      format:
+        delimiter: ""
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""
+          thousand: "千" # 10^3 kilo
+          million: "百万" # 10^6 mega
+          billion: "十亿" # 10^9 giga
+          trillion: "兆" # 10^12 tera
+          quadrillion: "千兆" # 10^15 peta
+          # 10^18 exa, 10^21 zetta, 10^24 yotta
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " 和 "
+      last_word_connector: ", 和 "
+    select:
+      prompt: "请选择"
+
+  errors:
+    format: "%{attribute} %{message}"
+    messages: &errors_messages
+      inclusion: "不包含于列表中"
+      exclusion: "是保留关键字"
+      invalid: "是无效的"
+      confirmation: "与确认值不匹配"
+      accepted: "必须是可被接受的"
+      empty: "不能留空"
+      blank: "不能为空字符"
+      too_long: "过长（最长为 %{count} 个字符）"
+      too_short: "过短（最短为 %{count} 个字符）"
+      wrong_length: "长度非法（必须为 %{count} 个字符）"
+      not_a_number: "不是数字"
+      not_an_integer: "必须是整数"
+      greater_than: "必须大于 %{count}"
+      greater_than_or_equal_to: "必须大于或等于 %{count}"
+      equal_to: "必须等于 %{count}"
+      less_than: "必须小于 %{count}"
+      less_than_or_equal_to: "必须小于或等于 %{count}"
+      odd: "必须为单数"
+      even: "必须为双数"
+      taken: "已经被使用"
+      record_invalid: "验证失败: %{errors}"
+    template: &errors_template
+      header:
+        one: "有 1 个错误发生导致「%{model}」无法被保存。"
+        other: "有 %{count} 个错误发生导致「%{model}」无法被保存。"
+      body: "如下字段出现错误："
+
+  activerecord:
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        <<: *errors_messages
+      template:
+        <<: *errors_template
+    models:
+      user: "用户"
+      user_session: "用户会话"
+      job: "工作"
+      resume: "申请"
+      user_role: "用户身份"
+      job_profile: "工作资料"
+      user_profile: "用户资料"
+      student_profile: "学生资料"
+      company_profile: "企业资料"
+      child_profile: "孩子资料"
+      letter: "站内信"
+      contact: "联系方式"
+      place: "位置"
+    attributes:
+      sex: &sex
+        male: "男"
+        female: "女"
+      campus: &campus
+        ZiJinGang: "紫金港校区"
+        YuQuan: "玉泉校区"
+        HuaJiaChi: "华家池校区"
+        XiXi: "西溪校区"
+        ZhiJiang: "之江校区"
+      user_role: &user_role
+        student: "学生"
+        parent: "家长"
+        company: "企业"
+        guest: "访客"
+        admin: "管理员"
+      job_category: &job_category
+        tutor: "家教"
+        campus: "校园兼职"
+        parttimes: "企业兼职"
+      user: &user
+        login: "用户名"
+        password: "密码"
+        password_confirmation: "密码确认"
+        role: "身份"
+        <<: *user_role
+      user_session:
+        login: "用户名"
+        password: "密码"
+      job:
+        name: "名称"
+        pay: "工资"
+        category: "分类"
+        <<: *job_category
+      resume:
+        note: "补充说明"
+        accepted: "接受"
+      job_profile:
+        address: "地址"
+        stop_employ_at: "停止招聘日期"
+        start_work_at: "开始工作日期"
+        amount: "所需人数"
+        description: "描述"
+        sex: "性别"
+        <<: *sex
+        campus: "校区"
+        <<: *campus
+        whatever: "不限"
+        grade: "年级"
+        major: "专业"
+        hometown: "家乡"
+      user_profile:
+        name: "姓名"
+        family_name: "姓"
+        first_name: "名"
+        sex: "性别"
+        <<: *sex
+        email: "电子邮箱"
+        contact: "联系方式"
+        address: "居住地址"
+        introduction: "自我介绍"
+      student_profile:
+        student_card: "校园卡号"
+        campus: "校区"
+        <<: *campus
+        grade: "年级"
+        major: "专业"
+        hometown: "家乡"
+      company_profile:
+        name: "公司名称"
+        license: "营业执照"
+      child_profile:
+        subject: "科目"
+        sex: "性别"
+        <<: *sex
+        age: "年纪"
+        grade: "年级"
+        introduction: "基本情况"
+      letter:
+        sender: "发信人"
+        receiver: "收信人"
+        content: "内容"
+      contact:
+        phone_type: "联系手段"
+        phone: "号码"
+      place:
+        address_type: "地址类型"
+        address: "地址"
+        
+  application:
+    authenticate:
+      alert: "还等什么，赶快加入我们吧！"
+      
+  views:
+    pagination:
+      first: "&laquo; 第一页"
+      last: "最后页 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "后 &rsaquo;"
+      truncate: "..."
+    actions:
+      confirm: "你确定吗?"
+      back_to_index: "返回首页"
+    pages:
+      root: "首页"
+      job_manager: "工作管理后台"
+      signin: "登陆"
+      signout: "登出"
+      register: "注册"
+  helpers:
+    select:
+      prompt: "请选择"
+    submit:
+      create: "新增%{model}"
+      update: "更新%{model}"
+      submit: "储存%{model}" 
+  authlogic:
+    error_messages:
+      login_blank: "不能为空"
+      login_not_found: "不存在"
+      login_invalid: "应该只出现字母、数字、空格、以及 .-_@"
+      consecutive_failed_logins_limit_exceeded: "连续登陆失败次数过多，该账户被屏蔽。"
+      email_invalid: "不像是一个正确的电子邮件地址。"
+      password_blank: "不能为空。"
+      password_invalid: "不正确。"
+      not_active: "你的账户未被激活"
+      not_confirmed: "你的账户未被确认"
+      not_approved: "你的账户未被审核通过"
+      no_authentication_details: "你没有给出任何的验证信息。"
+      general_credentials_error: "用户名与密码的组合不正确"
+    models:
+      user_session: "用户对话"
+    attributes:
+      user_session:
+        <<: *user
+        remember_me: "记住我"
+  layouts:
+    application:
+      papic: "家教兼职网"
+      description: "浙江大学唯一官方家教兼职网，由浙江大学勤工俭学与创业实践指导中心运营。"
+    public:
+      papic: "家教兼职网"
+    header:
+      papic: "家教兼职网"
+      root: "首页"
+      welcome: "欢迎您"
+      
+      signout: "登出"
+      signin: "登入"
+      register: "注册"
+      welcome_back: "欢迎回来"
+      
+      jobs: "工作列表"
+      new_job: "我要发布"
+      campus_jobs: "校园兼职"
+      new_campus_jobs: "创建校园兼职"
+      tutor_jobs: "家教"
+      new_tutor_jobs: "找家教"
+      parttimes_jobs: "企业兼职"
+      new_parttimes_jobs: "创建企业兼职"
+      
+      letter: "站内信"
+    footer:
+      contact: "联系我们"
+      qa: "常见问答"
+      about: "关于我们"
+    sidebar:
+      edit_user_profile: "修改用户资料"
+      new_user_profile: "创建用户资料"
+  
+  pages:
+    index:
+      title: "浙大唯一官方家教兼职网"
+      brief_introduction: "Introduction to our web."
+      learn_more: "了解更多&raquo;"
+      brief_introduction_to_tutor: "这里用来放置家教的介绍信息。"
+      brief_introduction_to_campus: "这里用来放置校园兼职的介绍信息。"
+      brief_introduction_to_parttimes: "这里用来放置企业兼职的介绍信息。"
+  job_profiles:
+    fields:
+      required_student_information: "对学生的要求"
+  
+  style: &style
+    mr: "先生"
+    miss: "女士"
+    fellow: "同学"
+  
+  user_profiles:
+    user_profile:
+      <<: *style
+  
+  jobs:
+    new:
+      create_parttimes: 创建企业兼职
+  
+  user_sessions:
+    new:
+      signin: 登陆
+      register: 还没有帐号？
+  
+  cancel: 取消
+  or: 或
+  edit: 编辑
+  destroy: 删除
+  confirm: 你确定吗？

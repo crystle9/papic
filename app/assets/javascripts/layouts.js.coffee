@@ -1,0 +1,2 @@
+jQuery ->
+  $('#signin').modal('hide')

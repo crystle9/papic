@@ -1,0 +1,23 @@
+= render @job  
+= gmaps4rails(@gmap)  
+
+%hr
+  
+- if current_user
+  - case @job.state
+  - when 'invalid'
+    %p Invalid!
+  - when 'valid'
+    - if current_user.have_checker_permission_for(@job)
+      .btn-group
+        = link_to t('edit'), edit_job_path(@job), :class => "btn btn-info"
+        = link_to t('destroy'), @job, :confirm => t('confirm'), :class => "btn btn-danger", :method => :delete
+      - if @job.resumes.count >= @job.job_profile.amount      
+        %p.well
+          已接受人数：
+          = @job.resumes.accepted.count
+        = render 'resumes/form_for_accept'
+    - else
+      = render 'resumes/form'
+  - when 'old'
+    %p Old

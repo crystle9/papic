@@ -1,0 +1,4 @@
+= simple_form_for @letter, :html => {:class => 'form-horizontal'} do |f|
+  = f.input 'receiver', :url => autocomplete_user_login_letters_path, :as => :autocomplete
+  = f.input :content, :as => :text, :input_html => {:rows => 2}
+  = f.button :submit

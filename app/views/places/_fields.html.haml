@@ -1,0 +1,4 @@
+= f.simple_fields_for :place do |g|
+  = f.input :address_type, :as => :select,
+    :collection => Place::ADDRESS_TYPES.collect{|c| [Place.human_attribute_name(c), c]}
+  = f.input :address

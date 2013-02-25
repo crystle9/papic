@@ -1,0 +1,13 @@
+%table.table
+  %tr
+    %td= User.human_attribute_name('login')
+    %td= user.login
+  %tr
+    %td= User.human_attribute_name('role')
+    %td= User.human_attribute_name(user.role)
+  = render user.user_profile
+  - case user.role
+    - when 'student' then
+      = render user.user_profile.student_profile
+    - when 'company' then
+      = render user.user_profile.company_profile

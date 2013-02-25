@@ -1,0 +1,54 @@
+.row
+  .span3
+    = link_to image_tag('logo.png', :mouseover => image_path('logo_red.png')), root_url
+
+%ul.nav.nav-tabs
+  %li.active= link_to t(".root"), root_url
+  %li.dropdown
+    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+      = t(".jobs")
+      %b.caret
+    %ul.dropdown-menu
+      - Job::CATEGORIES.each do |category|
+        = link_to Job.human_attribute_name(category), jobs_url(:category => category)
+  - if current_user
+    %li.dropdown
+      %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+        = t(".new_job")
+        %b.caret
+      %ul.dropdown-menu      
+        - Job::CATEGORIES.each do |category|
+          - if current_user.can_create_job_for?(category)
+            %li= link_to t(".new_#{category}_jobs"), new_job_url(:category => category)
+    %li= link_to t(".letter"), letters_url
+  .pull-right
+    - if current_user
+      %span.label        
+        &nbsp;
+        = t('.welcome_back') + ","
+        = link_to current_user.login, user_url(current_user)  
+        &nbsp;
+      %span.label.label-warning  
+        &nbsp;
+        = link_to t('.signout'), signout_path, :method => :delete  
+        &nbsp;
+    - else
+      %span.label.label-info
+        &nbsp;
+        = link_to t('.signin'),   '#signin', "data-toggle" => "modal"
+        \|
+        = link_to t('.register'), register_path
+        &nbsp;
+
+.modal.fade#signin
+  .modal-header
+    %a.close{"data-dismiss" => "modal"} x
+    %h3= t('.signin')
+  = simple_form_for UserSession.new, :html => {:class => 'form-horizontal'} do |f|
+    .modal-body
+      = f.input :login
+      = f.input :password
+    .modal-footer 
+      .btn.btn-danger
+        %a.close{"data-dismiss" => "modal"}= t('cancel')
+      = f.button :submit, t('.signin'), :class => 'btn-primary'      

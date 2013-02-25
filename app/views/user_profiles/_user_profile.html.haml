@@ -1,0 +1,25 @@
+%tr
+  %td= UserProfile.human_attribute_name('name')
+  - if @display_full
+    %td= full_name(user_profile)
+  - else
+    %td= part_name(user_profile)
+%tr
+  %td
+    = UserProfile.human_attribute_name('sex')
+  %td
+    = UserProfile.human_attribute_name(user_profile.sex)
+- if @display_full
+  %tr
+    %td
+      = UserProfile.human_attribute_name('email')
+    %td
+      = user_profile.email
+%tr
+  %td
+    = UserProfile.human_attribute_name('introduction')
+  %td
+    - if !user_profile.introduction.blank?
+      = user_profile.introduction
+    - else
+      无

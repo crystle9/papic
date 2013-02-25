@@ -1,0 +1,6 @@
+= simple_form_for @job, :url => accept_job_resumes_path(@job), 
+  :html => {:method => :put, :class => 'form-horizontal'} do |f|
+  - @job.resumes.each do |resume|
+    = f.simple_fields_for :resumes, resume do |g|
+      = g.input :accepted, :hint => link_to(resume.user.login, user_url(resume.user))
+  = f.button :submit

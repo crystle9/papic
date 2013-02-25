@@ -1,0 +1,19 @@
+= paginate @jobs
+%hr     
+.tab-content
+  .tab-pane.fade.active.in#all
+    .accordion#accordion-all
+      - @jobs.each do |job|
+        .accordion-group
+          .accordion-heading
+            .accordion-toggle{"data-parent" => "#accordion-all", "data-toggle" => "collapse", "data-target" => "#job_#{job.id}"}
+              %h2= job.name
+          = div_for(job, :class => "accordion-body collapse in") do
+            .accordion-inner
+              = link_to 'Detail', job_url(job)
+
+= paginate @jobs
+%hr
+
+- if current_user && current_user.is_admin?
+  = link_to "NewJob", new_job_path

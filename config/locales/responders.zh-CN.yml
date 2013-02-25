@@ -1,0 +1,17 @@
+zh-CN:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} 已被成功创建.'
+        alert: '失败！'
+      update:
+        notice: '%{resource_name} 已被成功更新.'
+        alert: '失败！'
+      destroy:
+        notice: '%{resource_name} 已被成功删除.'
+        alert: '%{resource_name} 无法被删除.'
+    user_profiles:
+      create:
+        notice: '您已经成功创建了用户资料～'
+      update:
+        notice: '您已经成功更新了用户资料～'

@@ -1,0 +1,10 @@
+.hero-unit
+  %h1= t('.title')
+  %a.btn.btn-primary.btn-large{:href => "#"}= raw t('.learn_more')
+.row-fluid
+  - Job::CATEGORIES.each do |category|
+    .span4
+      %h2= Job.human_attribute_name(category)
+      %a.btn{:href => "#"}= raw t('.learn_more')
+    / span
+/ heor-unit

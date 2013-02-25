@@ -1,0 +1,5 @@
+= f.simple_fields_for :contacts do |g|
+  = g.input :phone do
+    = g.input_field :phone_type, :as => :select,
+    :collection => Contact::PHONE_TYPES.collect{|c| [Contact.human_attribute_name(c), c]}
+    = g.input_field :phone

@@ -1,0 +1,7 @@
+= f.simple_fields_for :child_profile do |child_profile_fields|
+  = child_profile_fields.input :subject
+  = child_profile_fields.input :sex, :as => :select, 
+    :collection => ChildProfile::SEX.collect{|c| [UserProfile.human_attribute_name(c), c]}
+  = child_profile_fields.input :age
+  = child_profile_fields.input :grade
+  = child_profile_fields.input :introduction, :input_html => {:rows => 10}

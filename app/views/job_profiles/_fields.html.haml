@@ -1,0 +1,16 @@
+= f.simple_fields_for :job_profile do |job_profile_fields|
+  = job_profile_fields.input :address
+  = job_profile_fields.input :stop_employ_at, :input_html => {:class => 'span1'},
+    :start_year =>Time.now.year
+  = job_profile_fields.input :start_work_at, :input_html => {:class => 'span1'},
+    :start_year =>Time.now.year
+  = job_profile_fields.input :amount, :as => :integer
+  = job_profile_fields.input :description, :input_html => {:class => 'span4', :rows => 10}
+  %h3= t('.required_student_information')
+  = job_profile_fields.input :sex, :as => :select, :include_blank => false,
+    :collection => JobProfile::SEX.collect{|c| [JobProfile.human_attribute_name(c), c]}
+  = job_profile_fields.input :campus, :as => :select, :include_blank => false,
+    :collection => JobProfile::CAMPUS.collect{|c| [JobProfile.human_attribute_name(c), c]}
+  = job_profile_fields.input :grade
+  = job_profile_fields.input :major
+  = job_profile_fields.input :hometown

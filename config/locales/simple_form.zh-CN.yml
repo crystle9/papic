@@ -1,0 +1,124 @@
+zh-CN:
+  simple_form:
+    "yes": '是'
+    "no": '否'
+    required:
+      text: '必需'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "发现了一些错误，请您在检查修改后再尝试提交："
+    labels:
+      user:
+        login: "用户名"
+        password: "密码"
+        password_confirmation: "密码确认"
+        role: "身份"
+        agreement: "同意协议"
+      usersession:
+        login: "用户名"
+        password: "密码"
+      job:
+        name: "名称"
+        pay: "工资"
+      resume:
+        note: "补充说明"
+        accepted: "接受"
+      job_profile:
+        address: "地址"
+        stop_employ_at: "停止招聘日期"
+        start_work_at: "开始工作日期"
+        amount: "所需人数"
+        description: "描述"
+        sex: "性别"
+        campus: "校区"
+        grade: "年级"
+        major: "专业"
+        hometown: "家乡"
+      user_profile:
+        name: "真实姓名"
+        family_name: "姓"
+        first_name: "名"
+        sex: "性别"
+        email: "电子邮箱"
+        contact: "联系方式"
+        address: "居住地址"
+        introduction: "自我介绍"
+      student_profile:
+        student_card: "校园卡号"
+        campus: "校区"
+        grade: "年级"
+        major: "专业"
+        hometown: "家乡"
+      company_profile:
+        name: "公司名称"
+        license_img: "营业执照"
+      child_profile:
+        subject: "科目"
+        sex: "性别"
+        age: "年纪"
+        grade: "年级"
+        introduction: "基本情况"
+      letter:
+        sender: "发信人"
+        receiver: "收信人"
+        content: "内容"
+    hints:
+    placeholders:
+      user:
+        login: "用户名"
+        password: "密码"
+        password_confirmation: "密码确认"
+        role: "身份"
+        agreement: "同意协议"
+      usersession:
+        login: "用户名"
+        password: "密码"
+      job:
+        name: "名称"
+        pay: "工资"
+      resume:
+        note: "补充说明"
+        accepted: "接受"
+      job_profile:
+        address: "地址"
+        stop_employ_at: "停止招聘日期"
+        start_work_at: "开始工作日期"
+        amount: "所需人数"
+        description: "描述"
+        sex: "性别"
+        campus: "校区"
+        grade: "年级"
+        major: "专业"
+        hometown: "家乡"
+      user_profile:
+        name: "真实姓名"
+        family_name: "姓"
+        first_name: "名"
+        sex: "性别"
+        email: "电子邮箱"
+        contact: "联系方式"
+        address: "居住地址"
+        introduction: "自我介绍"
+      student_profile:
+        student_card: "校园卡号"
+        campus: "校区"
+        grade: "年级"
+        major: "专业"
+        hometown: "家乡"
+      company_profile:
+        name: "公司名称"
+        license_img: "营业执照"
+      child_profile:
+        subject: "科目"
+        sex: "性别"
+        age: "年纪"
+        grade: "年级"
+        introduction: "基本情况"
+      letter:
+        sender: "发信人"
+        receiver: "收信人"
+        content: "内容"
+

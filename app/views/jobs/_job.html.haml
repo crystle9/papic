@@ -1,0 +1,11 @@
+%table.table.table-striped
+  %tr
+    %td= Job.human_attribute_name('name')
+    %td= @job.name
+  %tr
+    %td= Job.human_attribute_name('pay')
+    %td= @job.pay
+  %tr
+    %td 申请统计
+    %td= @job.resumes.count
+  = render @job.job_profile

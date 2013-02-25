@@ -1,0 +1,36 @@
+body {
+}
+
+/*
+.container-fluid {
+  background-image: url("/assets/interface.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+*/
+
+.sidebar-nav {
+  padding: 9px 0;
+}
+
+
+.label a
+{
+  color: white;
+}
+
+@BOTTOM_COLOR: #EEE;
+
+.nice-footer
+{
+  padding-bottom: 40px; 
+  text-align: center;
+  
+  background: #000; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFF, endColorstr=@BOTTOM_COLOR); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(@BOTTOM_COLOR)); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  #FFF,  @BOTTOM_COLOR); /* for firefox 3.6+ */
+ 
+  color: black;
+  a { color: black; } 
+}

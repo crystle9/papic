@@ -1,0 +1,6 @@
+= simple_form_for [@job, @resume], :html => {:class => 'form-horizontal'} do |f|
+  = f.input :note
+  = f.button :submit
+
+- if @job.users.include?(current_user)
+  = link_to 'destroy', [@job, @resume], :confirm => 'confirm', :method => :delete
